@@ -14,7 +14,7 @@ export const addQuestion = (data,topicId)=>{
             Options : [data.option1,data.option2,data.option3,data.option4],
             CorrectAnswer : data.correctAnswer
         }
-        console.log(body,topicId)
+       
         const token = JSON.parse(localStorage.getItem("token"))
         const newURL = ADDQUESTION+`/${topicId}`
         const response = await apiConnector("POST",newURL,body,{

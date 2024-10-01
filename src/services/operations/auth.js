@@ -48,7 +48,7 @@ export const login = (email,password,navigate)=>{
         }
 
         const response = await apiConnector("POST",LOGIN,body)
-        console.log(response)
+     
    
      
        

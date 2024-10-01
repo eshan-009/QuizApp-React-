@@ -10,7 +10,7 @@ export const addTopic = (name,imageUrl,navigate)=>{
         dispatch(setLoader(true))
         const toastId = toast.loading("Adding Topic")
         const token = JSON.parse(localStorage.getItem("token"))
-        console.log("URLL",ADDTOPIC)
+     
         const response = await apiConnector("POST",ADDTOPIC,{name:name,imageUrl:imageUrl},{
             "Content-type": "application/json; charset=UTF-8",
             "Authorization" : `Bearer ${token}`})

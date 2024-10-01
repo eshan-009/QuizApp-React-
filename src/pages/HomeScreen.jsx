@@ -25,7 +25,7 @@ const Homescreen = () => {
 
        <div className='flex flex-wrap justify-center gap-2'>
        {
-            topicData ?   topicData.map((item,index)=><Card key={index} item={item}/>)  : "NO DATA"
+            topicData.length>0 ?   topicData.map((item,index)=><Card key={index} item={item}/>)  : <p className='text-2xl content-center'>Loading...</p>
         }
        </div>
    

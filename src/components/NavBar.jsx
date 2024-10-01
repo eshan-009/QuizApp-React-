@@ -25,7 +25,7 @@ const isInstructor = useSelector((state)=>state.Auth.isInstructor)
 
   return (
     <div className="flex justify-center gap-5 mx-14 p-4 flex-wrap xl:justify-between xl:gap-0 ">
-      <h1 className="text-3xl font-bold">Quizzy</h1>
+      <Link to={"/"}><h1  className="text-3xl font-bold">Quizzy</h1></Link>
       {!isLoggedIn ? (
         <div className="flex gap-2 ">
           <Link to={"/login"}>

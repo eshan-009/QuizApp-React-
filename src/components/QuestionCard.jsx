@@ -22,7 +22,7 @@ const QuestionCard = ({item,index}) => {
 
     <div className='flex flex-col items-start gap-3 p-4'>
     {
-      item.Options ?  item.Options.map((elem,index)=><button onClick={(e)=>clickHandler(e,index)} key={index} className={`border w-full p-3 flex items-start hover:bg-[#f1faee] ${selected===elem ? "bg-[#f1faee]  border border-[#57cc99]":""} `}><b>Option {index+1}:-</b> {elem}</button>) : "NO Data"
+      item.Options ?  item.Options.map((elem,index)=><button onClick={(e)=>clickHandler(e,index)} key={index} className={`border w-full p-3 flex items-start hover:bg-[#f1faee] text-pretty text-left ${selected===elem ? "bg-[#f1faee]  border border-[#57cc99]":""} `}><b>{String.fromCharCode(65 + index)}) &nbsp;</b> {elem}</button>) : "NO Data"
       }
     </div>
     </div>

@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import QuestionCard from '../components/QuestionCard';
 import Button from '../components/Button';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const QuizPage = () => {
-    const quizData = useSelector((state) => state.Data.quizData);
+    // const quizData = useSelector((state) => state.Data.quizData);
       const tracker = useSelector((state)=>state.Data.tracker)
-     
+     const location = useLocation()
+     const {quizData} = location.state || {}
       const quizLength = quizData ? quizData.length : 0
 
       const navigate = useNavigate()
@@ -26,7 +27,7 @@ const QuizPage = () => {
     }
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center mb-6'>
       {
         quizData ? quizData.map((item,index)=><QuestionCard 
         

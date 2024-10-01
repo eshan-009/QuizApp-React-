@@ -5,7 +5,7 @@ import { apiConnector } from "../apiconnector";
 const {GETQUIZ} = quizRoutes
 
 export const getQuiz = (topicId,navigate)=>{
-    console.log(topicId)
+    
     return async(dispatch)=>{
         const token = JSON.parse(localStorage.getItem("token"))
        
@@ -20,7 +20,7 @@ export const getQuiz = (topicId,navigate)=>{
             if(response.data.success)
             {
                 dispatch(setQuizData(response.data.quiz));
-                navigate("/quiz")
+                navigate("/quiz",{state : {quizData : response.data.quiz}})
             }
             
        
