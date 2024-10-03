@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { useLocation } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { submitResult } from '../services/operations/submitResult'
 
 const ScoreSheet = () => {
-    
-  
+  const topicId =useSelector((state)=>state.Data.currentTopic)
+
+    const dispatch = useDispatch()
     const location = useLocation()
 const {scorelist,totalMarks,tracker} = location.state || {}
-const marksScored = scorelist.reduce((acc,curr)=>acc = acc+curr,0)
+const marksScored = scorelist.reduce((acc,curr)=>acc = acc+curr,0);
+useEffect(()=>{
+  dispatch(submitResult(marksScored,totalMarks,topicId))
+},[])
 
 
   return (

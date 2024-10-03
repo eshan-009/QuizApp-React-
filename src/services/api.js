@@ -10,5 +10,5 @@ export const quizRoutes = {
     GETQUIZ : Base_URL + "/api/quiz/getQuiz",
     ADDQUESTION : Base_URL + "/api/quiz/addQuestion",
     ADDTOPIC : Base_URL + "/api/quiz/addTopic",
-    SUBMITQUIZ : Base_URL + "/submitQuiz"
+    SUBMITQUIZ : Base_URL + "/api/quiz/submitQuiz"
 }
